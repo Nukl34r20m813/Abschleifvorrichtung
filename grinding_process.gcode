@@ -17,6 +17,7 @@ G1 X30 Z40 F800     ; Z und X gleichzeitig bewegen
 G91                 ; Relativmodus
 G1 X70 F1000         ; Weiter schleifen
 G1 Z-40 X30 F800    ; Rückfahrt mit Rotation
+G92 X0
 
 ; --- Pause bis zur Bestätigung ---
 M0 > Weiter mit Stufe 2 (Z=40.2 mm)
@@ -25,6 +26,7 @@ M0 > Weiter mit Stufe 2 (Z=40.2 mm)
 G1 X30 Z40.2 F800   ; Z und X gleichzeitig vorfahren
 G1 X70 F1000
 G1 Z-40.2 X30 F800
+G92 X0
 
 ; --- Pause bis zur Bestätigung ---
 M0 > Weiter mit Stufe 3 (Z=40.4 mm)
@@ -33,6 +35,7 @@ M0 > Weiter mit Stufe 3 (Z=40.4 mm)
 G1 X30 Z40.4 F800
 G1 X70 F1000
 G1 Z-40.4 X30 F800
+G92 X0
 
 ; --- Pause bis zur Bestätigung ---
 M0 > Weiter mit Stufe 4 (Z=40.6 mm)
@@ -41,6 +44,7 @@ M0 > Weiter mit Stufe 4 (Z=40.6 mm)
 G1 X30 Z40.6 F800
 G1 X70 F1000
 G1 Z-40.6 X30 F800
+G92 X0
 
 ; --- Z homen ---
 G28 Z               ; Nur Z-Achse homen
