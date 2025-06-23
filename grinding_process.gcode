@@ -8,9 +8,8 @@ G92 Z0 X0           ; Z und X auf 0 setzen
 G28 Z               ; Nur Z-Achse homen
 G92 Z0              ; Nullpunkt nach Homing setzen
 
-; Z-Achse vorfahren, kurz vor Ziel Rotation starten
-G1 Z39 F600         ; fast komplette Z-Verfahrt
-G1 X20 Z40 F800     ; letzte 1 mm in Z, X rotiert bereits
+; Z-Achse vorfahren, Rotation direkt starten
+G1 X20 Z40 F600     ; Z und X gleichzeitig bewegen
 
 ; === Schleifvorgang in 3 Stufen ===
 
@@ -25,8 +24,7 @@ M0 > Weiter mit Stufe 2 (Z=40.2 mm)
 
 ; --- Stufe 2: Z = 40.2 mm ---
 G90                 ; Absolutmodus
-G1 Z39.2 F600       ; Z vorfahren
-G1 X20 Z40.2 F800   ; Rotation während letzter Z-Verfahrt
+G1 X20 Z40.2 F600   ; Z und X gleichzeitig vorfahren
 G91
 G1 X60 F300
 G1 Z-40.2 X30 F600
@@ -36,8 +34,7 @@ M0 > Weiter mit Stufe 3 (Z=40.4 mm)
 
 ; --- Stufe 3: Z = 40.4 mm ---
 G90
-G1 Z39.4 F600
-G1 X20 Z40.4 F800
+G1 X20 Z40.4 F600
 G91
 G1 X60 F300
 G1 Z-40.4 X30 F600
